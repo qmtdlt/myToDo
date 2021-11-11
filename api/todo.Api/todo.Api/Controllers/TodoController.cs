@@ -60,5 +60,37 @@ namespace todo.Api.Controllers
 
             return oldList;
         }
+        /// <summary>
+        /// 消息置顶
+        /// </summary>
+        /// <param name="todoText"></param>
+        /// <returns></returns>
+        [HttpPost("GoTop")]
+        public async Task<List<ToDoDTO>> GoTop(string todoText)
+        {
+            var oldList = await RedisHelper.GetAsync<List<ToDoDTO>>(RedisKeys.todoList);
+
+            int pos = 0;
+            for (int i = 0; i < oldList.Count; i++)
+            {
+                if (oldList[i].text == todoText)
+                {
+                    pos = i;
+                    break;
+                }
+            }
+
+            if (pos > 0)
+            {
+                var first = oldList[0].number;
+                oldList[0].number = oldList[pos].number;
+                oldList[pos].number = first;
+                oldList = oldList.OrderBy(t => t.number).ToList();
+
+                RedisHelper.Set(RedisKeys.todoList, oldList);
+            }
+
+            return oldList;
+        }
     }
 }

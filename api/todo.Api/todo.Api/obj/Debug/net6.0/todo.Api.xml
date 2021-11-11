@@ -11,5 +11,12 @@
             <param name="todoText"></param>
             <returns></returns>
         </member>
+        <member name="M:todo.Api.Controllers.TodoController.GoTop(System.String)">
+            <summary>
+            消息置顶
+            </summary>
+            <param name="todoText"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

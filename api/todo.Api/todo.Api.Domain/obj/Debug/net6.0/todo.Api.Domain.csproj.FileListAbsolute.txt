@@ -10,3 +10,15 @@ E:\项目\myProject\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Ap
 E:\项目\myProject\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.dll
 E:\项目\myProject\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\ref\todo.Api.Domain.dll
 E:\项目\myProject\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.pdb
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\bin\Debug\net6.0\todo.Api.Domain.deps.json
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\bin\Debug\net6.0\todo.Api.Domain.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\bin\Debug\net6.0\ref\todo.Api.Domain.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\bin\Debug\net6.0\todo.Api.Domain.pdb
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.csproj.AssemblyReference.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.AssemblyInfoInputs.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.AssemblyInfo.cs
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.csproj.CoreCompileInputs.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\ref\todo.Api.Domain.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.pdb

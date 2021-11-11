@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace todo.Api.Domain.DTO
 {
-    public class ToDoDTO
+    public record ToDoDTO
     {
         public int number { get; set; }
         public string text { get; set; }
