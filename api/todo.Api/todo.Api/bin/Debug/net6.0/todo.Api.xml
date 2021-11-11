@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>todo.Api</name>
+    </assembly>
+    <members>
+        <member name="M:todo.Api.Controllers.TodoController.DelTodo(System.String)">
+            <summary>
+            删除并返回现有的todo
+            </summary>
+            <param name="todoText"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

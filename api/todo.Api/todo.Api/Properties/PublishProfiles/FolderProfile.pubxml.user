@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\项目\测试工程\apipub</_PublishTargetUrl>
+    <History>True|2021-11-11T09:51:11.2125590Z;True|2021-11-11T17:36:50.8054785+08:00;True|2021-11-11T17:19:14.1895359+08:00;False|2021-11-11T17:18:14.4763302+08:00;False|2021-11-11T17:17:51.1485170+08:00;</History>
+  </PropertyGroup>
+</Project>
