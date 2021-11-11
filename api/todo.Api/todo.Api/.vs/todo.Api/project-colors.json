@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "13fa8b0b-5bc2-4c48-a989-e72c49880c40": {
+      "ProjectGuid": "13fa8b0b-5bc2-4c48-a989-e72c49880c40",
+      "DisplayName": "todo.Api",
+      "ColorIndex": 0
+    },
+    "cb241fcb-1988-49e5-985a-d9afdcbf711a": {
+      "ProjectGuid": "cb241fcb-1988-49e5-985a-d9afdcbf711a",
+      "DisplayName": "todo.Api.Domain",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
