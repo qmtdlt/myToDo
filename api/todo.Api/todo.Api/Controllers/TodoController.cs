@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using todo.Api.Domain.Data;
 using todo.Api.Domain.DTO;
 
@@ -25,15 +24,16 @@ namespace todo.Api.Controllers
                 oldList = new List<ToDoDTO>();
                 oldList.Add(new ToDoDTO
                 {
-                    number = 1,text = todoText
+                    number = 1,
+                    text = todoText
                 });
             }
             else
             {
-                oldList.Add(new ToDoDTO { number = oldList.Max(t=>t.number) + 1,text = todoText });
+                oldList.Add(new ToDoDTO { number = oldList.Max(t => t.number) + 1, text = todoText });
             }
-            RedisHelper.Set(RedisKeys.todoList,oldList);
-        }      
+            RedisHelper.Set(RedisKeys.todoList, oldList);
+        }
         [HttpGet("GetList")]
         public async Task<List<ToDoDTO>> GetList()
         {

@@ -5,6 +5,7 @@
             <el-input v-model="todoText"></el-input>
         </el-col>        
         <el-button :span="10" @click="do_post">post</el-button>
+        <el-button :span="10" @click="send">发送消息</el-button>
     </el-row>
     <el-row>
       <el-col :span="11">
@@ -29,6 +30,8 @@
 <script>
 import axios from 'axios'
 
+import * as signalR from "@aspnet/signalr";
+
 export default {
   name: 'ToDoForm',
   props: {
@@ -39,14 +42,19 @@ export default {
       return {
         todoText:"",
         url : "Todo/",
-        todoList:[]
+        todoList:[],
+        connection:""
       }
   },
   methods:{
+    send()
+    {
+      this.$data.connection.invoke("guang_bo", "asdfasdf");
+    },
       do_post(){ 
-          axios.post(`http://1.15.248.70:8089/api/Todo/AddToDo?todoText=` + this.$data.todoText)
+          axios.post(`http://localhost:5189/api/Todo/AddToDo?todoText=` + this.$data.todoText)
           .then(()=>{
-            axios.get(`http://1.15.248.70:8089/api/Todo/GetList`)
+            axios.get(`http://localhost:5189/api/Todo/GetList`)
             .then((res)=>{
                 console.log("刷新todo");
                 this.$data.todoList = res.data;
@@ -56,7 +64,7 @@ export default {
       },
       deltodo(t_text)
       {
-        axios.post(`http://1.15.248.70:8089/api/Todo/DelTodo?todoText=` + t_text)
+        axios.post(`http://localhost:5189/api/Todo/DelTodo?todoText=` + t_text)
         .then((res)=>{
           console.log("刷新todo");
           this.$data.todoList = res.data;
@@ -65,7 +73,7 @@ export default {
       },
       gotop(t_text)
       {
-        axios.post(`http://1.15.248.70:8089/api/Todo/GoTop?todoText=` + t_text)
+        axios.post(`http://localhost:5189/api/Todo/GoTop?todoText=` + t_text)
           .then((res)=>{
             console.log("刷新todo");
             this.$data.todoList = res.data;
@@ -74,11 +82,25 @@ export default {
       }
   },
   mounted(){
-    axios.get(`http://1.15.248.70:8089/api/Todo/GetList`)
+    axios.get(`http://localhost:5189/api/Todo/GetList`)
     .then((res)=>{
         this.$data.todoList = res.data;
-        console.log('初始化完成');
     });
+
+     this.$data.connection = new signalR.HubConnectionBuilder()
+    .withUrl("http://localhost:5189/ChatHub", {
+          skipNegotiation: true,  
+          transport: signalR.HttpTransportType.WebSockets
+        })     //debug
+    .configureLogging(signalR.LogLevel.Error).build();
+    
+     this.$data.connection.start().then(()=>{
+       
+    });
+
+    this.$data.connection.on("guang_bo", data => {
+        console.log(data);
+      });
   }
 }
 </script>

@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "61b449d4-c617-46ed-9751-a6abaf288b57": {
+      "ProjectGuid": "61b449d4-c617-46ed-9751-a6abaf288b57",
+      "DisplayName": "todo.Api",
+      "ColorIndex": 0
+    },
+    "54ac4187-fdc2-4201-ac33-9070d47e747e": {
+      "ProjectGuid": "54ac4187-fdc2-4201-ac33-9070d47e747e",
+      "DisplayName": "todo.Api.Domain",
+      "ColorIndex": 1
+    },
+    "169c5c31-c464-465e-a32b-cb533770794e": {
+      "ProjectGuid": "169c5c31-c464-465e-a32b-cb533770794e",
+      "DisplayName": "todo.Api.Service",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}
