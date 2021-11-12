@@ -44,6 +44,8 @@ export default {
   data()
   {
       return {
+        debug_base_url:"http://1.15.248.70:8089",//http://localhost:5189
+        prod_base_url:"http://1.15.248.70:8089",
         todoText:"",
         url : "Todo/",
         todoList:[],
@@ -58,9 +60,9 @@ export default {
       this.$data.connection.invoke("guang_bo", this.$data.msgText);
     },
       do_post(){ 
-          axios.post(`http://localhost:5189/api/Todo/AddToDo?todoText=` + this.$data.todoText)
+          axios.post(`${this.$data.debug_base_url}/api/Todo/AddToDo?todoText=` + this.$data.todoText)
           .then(()=>{
-            axios.get(`http://localhost:5189/api/Todo/GetList`)
+            axios.get(`${this.$data.debug_base_url}/api/Todo/GetList`)
             .then((res)=>{
                 this.$data.todoList = res.data;
             });              
@@ -68,30 +70,33 @@ export default {
       },
       deltodo(t_text)
       {
-        axios.post(`http://localhost:5189/api/Todo/DelTodo?todoText=` + t_text)
+        axios.post(`${this.$data.debug_base_url}/api/Todo/DelTodo?todoText=` + t_text)
         .then((res)=>{
           this.$data.todoList = res.data;           
         });
       },
       gotop(t_text)
       {
-        axios.post(`http://localhost:5189/api/Todo/GoTop?todoText=` + t_text)
+        axios.post(`${this.$data.debug_base_url}/api/Todo/GoTop?todoText=` + t_text)
           .then((res)=>{
             this.$data.todoList = res.data;            
           });
       }
   },
   mounted(){
-    axios.get(`http://localhost:5189/api/Todo/GetList`)
+    axios.get(`${this.$data.debug_base_url}/api/Todo/GetList`)
     .then((res)=>{
         this.$data.todoList = res.data;
     });
 
      this.$data.connection = new signalR.HubConnectionBuilder()
-    .withUrl("http://localhost:5189/ChatHub", {
-          skipNegotiation: true,  
-          transport: signalR.HttpTransportType.WebSockets
-        })     //debug
+    .withUrl(`${this.$data.debug_base_url}/ChatHub`
+      , 
+      {
+            skipNegotiation: true,  
+            transport: signalR.HttpTransportType.WebSockets
+      }
+    )     //debug
     .configureLogging(signalR.LogLevel.Error).build();
     
      this.$data.connection.start();

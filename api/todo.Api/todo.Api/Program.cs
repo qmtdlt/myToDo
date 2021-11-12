@@ -36,14 +36,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//var webSocketOptions = new WebSocketOptions()
-//{
-//    KeepAliveInterval = TimeSpan.FromSeconds(120),
-//};
-//webSocketOptions.AllowedOrigins.Add("http://localhost:8080/");
-
-//app.UseWebSockets(webSocketOptions);
-
 app.UseRouting();
 app.UseCors("cors");
 
