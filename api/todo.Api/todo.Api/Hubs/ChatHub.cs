@@ -7,15 +7,9 @@ namespace todo.Api.Hubs
     public class ChatHub : Hub
     {
         [EnableCors("cors")]
-        public async Task hand_shake()
-        {
-            await Clients.Caller.SendAsync("connect_echo", "链接建立成功");
-        }
-
-        [EnableCors("cors")]
         public async Task guang_bo(string msg)
         {
-            await Clients.Caller.SendAsync("guang_bo", msg);
+            await Clients.AllExcept(this.Context.ConnectionId).SendAsync("guang_bo", this.Context.ConnectionId + "\t" + msg);
         }
     }
 }
