@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\项目\\myProject\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj": {}
+    "E:\\work\\mytodo\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj": {}
   },
   "projects": {
-    "E:\\项目\\myProject\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj": {
+    "E:\\work\\mytodo\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\项目\\myProject\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj",
+        "projectUniqueName": "E:\\work\\mytodo\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj",
         "projectName": "todo.Api.Domain",
-        "projectPath": "E:\\项目\\myProject\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj",
-        "packagesPath": "C:\\Users\\zhanghao\\.nuget\\packages\\",
-        "outputPath": "E:\\项目\\myProject\\myToDo\\api\\todo.Api\\todo.Api.Domain\\obj\\",
+        "projectPath": "E:\\work\\mytodo\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj",
+        "packagesPath": "C:\\Users\\15289\\.nuget\\packages\\",
+        "outputPath": "E:\\work\\mytodo\\myToDo\\api\\todo.Api\\todo.Api.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "G:\\DevTools\\vs2019\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zhanghao\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\15289\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

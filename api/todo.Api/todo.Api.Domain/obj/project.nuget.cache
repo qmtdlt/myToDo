@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5OjzCRz6O4zZOPhtsO7u1cz1dqThbtJ4u1b2IfsY9mCD9A+uGcD8FMQTUMw8JpILfC1CLK4KcmCGw/SsFZPpJw==",
+  "dgSpecHash": "OMKQ3+DXKgRKa8kDJu1f1KPpQ0hlGL8OdKeGRYYHkojeSLxraAk8+2Obc7eKWHummspkSksfdgEDghk3rRdm5w==",
   "success": true,
-  "projectFilePath": "E:\\项目\\myProject\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj",
+  "projectFilePath": "E:\\work\\mytodo\\myToDo\\api\\todo.Api\\todo.Api.Domain\\todo.Api.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
