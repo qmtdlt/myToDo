@@ -15,6 +15,15 @@
           "lib/netstandard2.0/CSRedisCore.dll": {}
         }
       },
+      "FreeSql/2.6.100": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FreeSql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FreeSql.dll": {}
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
         "type": "package",
         "build": {
@@ -114,12 +123,26 @@
           "bin/placeholder/todo.Api.Domain.dll": {}
         }
       },
+      "todo.Api.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FreeSql": "2.6.100",
+          "todo.Api.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/todo.Api.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/todo.Api.Repository.dll": {}
+        }
+      },
       "todo.Api.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "CSRedisCore": "3.6.6",
-          "todo.Api.Domain": "1.0.0"
+          "todo.Api.Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/todo.Api.Service.dll": {}
@@ -146,6 +169,27 @@
         "lib/net45/CSRedisCore.xml",
         "lib/netstandard2.0/CSRedisCore.dll",
         "lib/netstandard2.0/CSRedisCore.xml"
+      ]
+    },
+    "FreeSql/2.6.100": {
+      "sha512": "pZtckvsbS17wBUOKfsvsJzBjZ38OIb6y+1i0e+eMdRBmASYHjAholOQcnJzhOLdGATDs+GjQdmAWI1Z0JQLyqQ==",
+      "type": "package",
+      "path": "freesql/2.6.100",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "freesql.2.6.100.nupkg.sha512",
+        "freesql.nuspec",
+        "lib/net40/FreeSql.dll",
+        "lib/net40/FreeSql.pdb",
+        "lib/net40/FreeSql.xml",
+        "lib/net45/FreeSql.dll",
+        "lib/net45/FreeSql.pdb",
+        "lib/net45/FreeSql.xml",
+        "lib/netstandard2.0/FreeSql.dll",
+        "lib/netstandard2.0/FreeSql.pdb",
+        "lib/netstandard2.0/FreeSql.xml",
+        "logo.png"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -352,6 +396,11 @@
       "type": "project",
       "path": "../todo.Api.Domain/todo.Api.Domain.csproj",
       "msbuildProject": "../todo.Api.Domain/todo.Api.Domain.csproj"
+    },
+    "todo.Api.Repository/1.0.0": {
+      "type": "project",
+      "path": "../todo.Api.Repository/todo.Api.Repository.csproj",
+      "msbuildProject": "../todo.Api.Repository/todo.Api.Repository.csproj"
     },
     "todo.Api.Service/1.0.0": {
       "type": "project",

@@ -28,3 +28,5 @@ E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Service\obj\Debug\net6.0\todo.Api.Se
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Service\obj\Debug\net6.0\todo.Api.Service.dll
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Service\obj\Debug\net6.0\ref\todo.Api.Service.dll
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Service\obj\Debug\net6.0\todo.Api.Service.pdb
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Service\bin\Debug\net6.0\todo.Api.Repository.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Service\bin\Debug\net6.0\todo.Api.Repository.pdb

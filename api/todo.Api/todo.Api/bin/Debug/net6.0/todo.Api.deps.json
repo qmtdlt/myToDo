@@ -27,6 +27,14 @@
           }
         }
       },
+      "FreeSql/2.6.100": {
+        "runtime": {
+          "lib/netstandard2.0/FreeSql.dll": {
+            "assemblyVersion": "2.6.100.0",
+            "fileVersion": "2.6.100.0"
+          }
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
       "Microsoft.OpenApi/1.2.3": {
         "runtime": {
@@ -88,10 +96,19 @@
           "todo.Api.Domain.dll": {}
         }
       },
+      "todo.Api.Repository/1.0.0": {
+        "dependencies": {
+          "FreeSql": "2.6.100",
+          "todo.Api.Domain": "1.0.0"
+        },
+        "runtime": {
+          "todo.Api.Repository.dll": {}
+        }
+      },
       "todo.Api.Service/1.0.0": {
         "dependencies": {
           "CSRedisCore": "3.6.6",
-          "todo.Api.Domain": "1.0.0"
+          "todo.Api.Repository": "1.0.0"
         },
         "runtime": {
           "todo.Api.Service.dll": {}
@@ -111,6 +128,13 @@
       "sha512": "sha512-fxP+ZuW3wj1425iILLyF+L1oTjWRM5odFn0p/LFYkUWzEfYznjBB7xzn716kVH3SxD0cSv7fj9Jaf1kKaPduRA==",
       "path": "csrediscore/3.6.6",
       "hashPath": "csrediscore.3.6.6.nupkg.sha512"
+    },
+    "FreeSql/2.6.100": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pZtckvsbS17wBUOKfsvsJzBjZ38OIb6y+1i0e+eMdRBmASYHjAholOQcnJzhOLdGATDs+GjQdmAWI1Z0JQLyqQ==",
+      "path": "freesql/2.6.100",
+      "hashPath": "freesql.2.6.100.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
@@ -169,6 +193,11 @@
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
     "todo.Api.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "todo.Api.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

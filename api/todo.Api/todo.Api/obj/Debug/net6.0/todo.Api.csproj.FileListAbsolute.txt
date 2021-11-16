@@ -68,3 +68,6 @@ E:\work\mytodo\myToDo\api\todo.Api\todo.Api\obj\Debug\net6.0\ref\todo.Api.dll
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api\obj\Debug\net6.0\todo.Api.xml
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api\obj\Debug\net6.0\todo.Api.pdb
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api\obj\Debug\net6.0\todo.Api.genruntimeconfig.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api\bin\Debug\net6.0\FreeSql.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api\bin\Debug\net6.0\todo.Api.Repository.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api\bin\Debug\net6.0\todo.Api.Repository.pdb

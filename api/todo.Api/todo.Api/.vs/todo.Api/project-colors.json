@@ -10,7 +10,17 @@
       "ProjectGuid": "cb241fcb-1988-49e5-985a-d9afdcbf711a",
       "DisplayName": "todo.Api.Domain",
       "ColorIndex": 1
+    },
+    "7142f4d7-5d8c-4509-b747-b81a10d35731": {
+      "ProjectGuid": "7142f4d7-5d8c-4509-b747-b81a10d35731",
+      "DisplayName": "todo.Api.Repository",
+      "ColorIndex": 2
+    },
+    "6d5b9bfe-5194-4eb8-85d7-c61f6922a5f8": {
+      "ProjectGuid": "6d5b9bfe-5194-4eb8-85d7-c61f6922a5f8",
+      "DisplayName": "todo.Api.Util",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

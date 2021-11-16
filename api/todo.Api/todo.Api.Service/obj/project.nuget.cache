@@ -1,12 +1,23 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "0e8ARZRW+8ZDp+M9uSrMNnBPGaClxba4Qqen5XTMG/JYbfxX52McpzHadSVt/g/KkRKnG1PO7+vpe4+10hyzzw==",
+=======
+  "dgSpecHash": "KSFNcPmQhkDavnElndKpr9vymV54KtQz1KhQ73+Ye8AJl/TpajXmbqLG+fzoz63BMi1qgCu9VGfrLOQ7HV9yig==",
+>>>>>>> 1dea8b5 (appsetting connstr,repisitory,dependency)
   "success": true,
   "projectFilePath": "E:\\项目\\myProject\\myToDo\\api\\todo.Api\\todo.Api.Service\\todo.Api.Service.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\zhanghao\\.nuget\\packages\\csrediscore\\3.6.6\\csrediscore.3.6.6.nupkg.sha512",
     "C:\\Users\\zhanghao\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\zhanghao\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+=======
+    "C:\\Users\\15289\\.nuget\\packages\\csrediscore\\3.6.6\\csrediscore.3.6.6.nupkg.sha512",
+    "C:\\Users\\15289\\.nuget\\packages\\freesql\\2.6.100\\freesql.2.6.100.nupkg.sha512",
+    "C:\\Users\\15289\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\15289\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+>>>>>>> 1dea8b5 (appsetting connstr,repisitory,dependency)
   ],
   "logs": []
 }
