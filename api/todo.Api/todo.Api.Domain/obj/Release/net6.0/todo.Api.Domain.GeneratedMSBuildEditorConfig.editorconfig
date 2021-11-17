@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = todo.Api.Domain
-build_property.ProjectDir = E:\项目\myProject\myToDo\api\todo.Api\todo.Api.Domain\
+build_property.ProjectDir = E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\

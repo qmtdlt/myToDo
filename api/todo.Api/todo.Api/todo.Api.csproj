@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\todo.Api.Service\todo.Api.Service.csproj" />
+    <ProjectReference Include="..\todo.Api.Util\todo.Api.Util.csproj" />
   </ItemGroup>
 
 </Project>

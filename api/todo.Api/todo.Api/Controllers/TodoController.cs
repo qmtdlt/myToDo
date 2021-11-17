@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using todo.Api.Domain.Data;
 using todo.Api.Domain.DTO;
+using todo.Api.Domain.Entitys;
 
 namespace todo.Api.Controllers
 {
@@ -9,35 +11,48 @@ namespace todo.Api.Controllers
     public class TodoController : ControllerBase
     {
         ILogger<TodoController> _logger;
-        public TodoController(ILogger<TodoController> logger)
+        IFreeSql _freeSql;
+        public TodoController(ILogger<TodoController> logger, IFreeSql freeSql)
         {
             _logger = logger;
+            _freeSql = freeSql;
         }
 
         [HttpPost("AddToDo")]
-        public void AddToDo(string todoText)
+        public async void AddToDo(string todoText)
         {
-            var oldList = RedisHelper.Get<List<ToDoDTO>>(RedisKeys.todoList);
+            todolist old = await _freeSql.Select<todolist>().Where(t=>t.todo_text == todoText).FirstAsync();
 
-            if (oldList == null || oldList.Count <= 0)
+            if (old == null)
             {
-                oldList = new List<ToDoDTO>();
-                oldList.Add(new ToDoDTO
+                try
                 {
-                    number = 1,
-                    text = todoText
-                });
+                    int max = _freeSql.Select<todolist>().Max(t => t.sort);
+
+                    _freeSql.Insert<todolist>().AppendData(new todolist
+                    {
+                        id = Guid.NewGuid().ToString(),
+                        todo_text = todoText,
+                        sort = max+1
+                    }).ExecuteIdentity();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
             }
-            else
-            {
-                oldList.Add(new ToDoDTO { number = oldList.Max(t => t.number) + 1, text = todoText });
-            }
-            RedisHelper.Set(RedisKeys.todoList, oldList);
         }
         [HttpGet("GetList")]
         public async Task<List<ToDoDTO>> GetList()
         {
-            return await RedisHelper.GetAsync<List<ToDoDTO>>(RedisKeys.todoList);
+            var list = await _freeSql.Select<todolist>().ToListAsync();
+
+            List < ToDoDTO > res = new List<ToDoDTO>();
+            foreach (var item in list.OrderBy(t=>t.sort))
+            {
+                res.Add(new ToDoDTO() { number = item.sort,text = item.todo_text});
+            }
+            return res;
         }
 
         /// <summary>
@@ -48,17 +63,16 @@ namespace todo.Api.Controllers
         [HttpPost("DelTodo")]
         public async Task<List<ToDoDTO>> DelTodo(string todoText)
         {
-            var oldList = await RedisHelper.GetAsync<List<ToDoDTO>>(RedisKeys.todoList);
+            _freeSql.Delete<todolist>().Where(t=>t.todo_text == todoText).ExecuteAffrows();
+            
+            var list = _freeSql.Select<todolist>().ToList();
 
-            var findTodo = oldList.Where(t => t.text == todoText).FirstOrDefault();
-
-            if (findTodo != null)
+            List<ToDoDTO> res = new List<ToDoDTO>();
+            foreach (var item in list.OrderBy(t => t.sort))
             {
-                oldList.Remove(findTodo);
-                RedisHelper.Set(RedisKeys.todoList, oldList);
+                res.Add(new ToDoDTO() { number = item.sort, text = item.todo_text });
             }
-
-            return oldList;
+            return res;
         }
         /// <summary>
         /// 消息置顶
@@ -68,12 +82,12 @@ namespace todo.Api.Controllers
         [HttpPost("GoTop")]
         public async Task<List<ToDoDTO>> GoTop(string todoText)
         {
-            var oldList = await RedisHelper.GetAsync<List<ToDoDTO>>(RedisKeys.todoList);
+            var oldList = _freeSql.Select<todolist>().OrderBy(t=>t.sort).ToList();
 
             int pos = 0;
             for (int i = 0; i < oldList.Count; i++)
             {
-                if (oldList[i].text == todoText)
+                if (oldList[i].todo_text == todoText)
                 {
                     pos = i;
                     break;
@@ -82,15 +96,21 @@ namespace todo.Api.Controllers
 
             if (pos > 0)
             {
-                var first = oldList[0].number;
-                oldList[0].number = oldList[pos].number;
-                oldList[pos].number = first;
-                oldList = oldList.OrderBy(t => t.number).ToList();
+                var first = oldList[0].sort;
+                oldList[0].sort = oldList[pos].sort;
+                oldList[pos].sort = first;
+                oldList = oldList.OrderBy(t => t.sort).ToList();
 
-                RedisHelper.Set(RedisKeys.todoList, oldList);
+                _freeSql.Update<todolist>(oldList).ExecuteAffrows();
             }
 
-            return oldList;
+
+            List<ToDoDTO> res = new List<ToDoDTO>();
+            foreach (var item in oldList.OrderBy(t => t.sort))
+            {
+                res.Add(new ToDoDTO() { number = item.sort, text = item.todo_text });
+            }
+            return res;
         }
     }
 }

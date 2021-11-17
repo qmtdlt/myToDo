@@ -1,4 +1,6 @@
+using FreeSql;
 using todo.Api.Hubs;
+using todo.Api.Util.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,14 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader()
         .AllowAnyMethod());
 });
+
+
+
+IFreeSql freeSql = new FreeSqlBuilder()
+    .UseConnectionString(FreeSql.DataType.MySql, "Server=1.15.248.70;User ID=root;Password=123456;port=3306;Database=todo_db;CharSet=utf8;pooling=true;SslMode=None;")
+    .UseAutoSyncStructure(true)
+    .Build();
+builder.Services.AddSingleton<IFreeSql>(freeSql);
 
 
 var app = builder.Build();

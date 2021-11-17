@@ -21,3 +21,4 @@ E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Dom
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.dll
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\ref\todo.Api.Domain.dll
 E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.pdb
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Domain\obj\Debug\net6.0\todo.Api.Domain.csproj.AssemblyReference.cache
