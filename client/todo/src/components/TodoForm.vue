@@ -1,32 +1,40 @@
 <template>
   <div>
+    <!-- 输入提交 -->
     <el-row>
-        <el-col :span="10">
+        <el-col :span="15">
             <el-input v-model="todoText"></el-input>
         </el-col>        
-        <el-button :span="10" @click="do_post">post</el-button>
-        <el-col :span="10">
-            <el-input v-model="msgText"></el-input>
-        </el-col>   
-        <el-button :span="10" @click="send">发送消息</el-button>
-        <el-input v-model="receiveMsg"></el-input>
+        <el-button :span="2" @click="do_post" size="mini">post</el-button>        
     </el-row>
+
     <el-row>
-      <el-col :span="11">
-        <el-card>
-          <el-row v-for="item in todoList" v-bind:key="item">
-              <el-col :span="16">
+      <el-card v-for="item in todoList" v-bind:key="item" style="width:170px;margin:2px;">
+          <el-row>
+              <el-col :span="24">
                 <p>{{item.number}} -- {{item.text}}</p>
               </el-col>
-              <el-col :span="3">
-                <el-button @click="deltodo(item.text)">删除</el-button>
+          </el-row>
+          <el-row>
+            <el-col :span="12">
+                <el-button @click="deltodo(item.text)" size="mini">删除</el-button>
               </el-col>
-              <el-col :span="3">
-                <el-button @click="gotop(item.text)">置顶</el-button>
+              <el-col :span="12">
+                <el-button @click="gotop(item.text)" size="mini">置顶</el-button>
               </el-col>
           </el-row>
         </el-card>
-      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="20">
+            <el-input v-model="msgText"></el-input>
+        </el-col>   
+        <el-button :span="2" @click="send">发送消息</el-button>
+    </el-row>
+
+    <el-row>
+      <el-input :span="20" v-model="receiveMsg" type="textarea" autosize></el-input>
     </el-row>
   </div>
 </template>
@@ -43,9 +51,20 @@ export default {
   },
   data()
   {
+      let url = "";
+      let isdebug = false;
+      if(isdebug)
+      {
+        url = "http://localhost:5189";
+      }
+      else
+      {
+        url = "http://www.qmtdlt.cn:8088";
+      }
+      
+        
       return {
-        debug_base_url:"http://1.15.248.70:8089",//http://localhost:5189
-        prod_base_url:"http://1.15.248.70:8089",
+        base_url:url,
         todoText:"",
         url : "Todo/",
         todoList:[],
@@ -60,9 +79,9 @@ export default {
       this.$data.connection.invoke("guang_bo", this.$data.msgText);
     },
       do_post(){ 
-          axios.post(`${this.$data.debug_base_url}/api/Todo/AddToDo?todoText=` + this.$data.todoText)
+          axios.post(`${this.$data.base_url}/api/Todo/AddToDo?todoText=` + this.$data.todoText)
           .then(()=>{
-            axios.get(`${this.$data.debug_base_url}/api/Todo/GetList`)
+            axios.get(`${this.$data.base_url}/api/Todo/GetList`)
             .then((res)=>{
                 this.$data.todoList = res.data;
             });              
@@ -70,27 +89,27 @@ export default {
       },
       deltodo(t_text)
       {
-        axios.post(`${this.$data.debug_base_url}/api/Todo/DelTodo?todoText=` + t_text)
+        axios.post(`${this.$data.base_url}/api/Todo/DelTodo?todoText=` + t_text)
         .then((res)=>{
           this.$data.todoList = res.data;           
         });
       },
       gotop(t_text)
       {
-        axios.post(`${this.$data.debug_base_url}/api/Todo/GoTop?todoText=` + t_text)
+        axios.post(`${this.$data.base_url}/api/Todo/GoTop?todoText=` + t_text)
           .then((res)=>{
             this.$data.todoList = res.data;            
           });
       }
   },
   mounted(){
-    axios.get(`${this.$data.debug_base_url}/api/Todo/GetList`)
+    axios.get(`${this.$data.base_url}/api/Todo/GetList`)
     .then((res)=>{
         this.$data.todoList = res.data;
     });
 
      this.$data.connection = new signalR.HubConnectionBuilder()
-    .withUrl(`${this.$data.debug_base_url}/ChatHub`
+    .withUrl(`${this.$data.base_url}/ChatHub`
       , 
       {
             skipNegotiation: true,  
