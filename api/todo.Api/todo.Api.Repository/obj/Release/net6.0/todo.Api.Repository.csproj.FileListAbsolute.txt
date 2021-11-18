@@ -1,0 +1,15 @@
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\bin\Release\net6.0\todo.Api.Repository.deps.json
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\bin\Release\net6.0\todo.Api.Repository.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\bin\Release\net6.0\ref\todo.Api.Repository.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\bin\Release\net6.0\todo.Api.Repository.pdb
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\bin\Release\net6.0\todo.Api.Domain.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\bin\Release\net6.0\todo.Api.Domain.pdb
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.csproj.AssemblyReference.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.AssemblyInfoInputs.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.AssemblyInfo.cs
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.csproj.CoreCompileInputs.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.csproj.CopyComplete
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\ref\todo.Api.Repository.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Repository\obj\Release\net6.0\todo.Api.Repository.pdb

@@ -1,0 +1,12 @@
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\bin\Debug\net6.0\todo.Api.Util.deps.json
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\bin\Debug\net6.0\todo.Api.Util.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\bin\Debug\net6.0\ref\todo.Api.Util.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\bin\Debug\net6.0\todo.Api.Util.pdb
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\todo.Api.Util.csproj.AssemblyReference.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\todo.Api.Util.GeneratedMSBuildEditorConfig.editorconfig
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\todo.Api.Util.AssemblyInfoInputs.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\todo.Api.Util.AssemblyInfo.cs
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\todo.Api.Util.csproj.CoreCompileInputs.cache
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\todo.Api.Util.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\ref\todo.Api.Util.dll
+E:\work\mytodo\myToDo\api\todo.Api\todo.Api.Util\obj\Debug\net6.0\todo.Api.Util.pdb
