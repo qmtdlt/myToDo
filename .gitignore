@@ -22,3 +22,7 @@ pnpm-debug.log*
 .vscode
 *.ntvs*
 *.sw?
+*.dtbcache
+project-colors.json
+.futdcache.v1
+*.suo

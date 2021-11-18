@@ -15,3 +15,23 @@
 
 ### 一个todo应用
 ### 支持signalr的消息发送
+
+### nginx config
+```nginx
+server { 
+		listen          80;                   
+		server_name     qmtdlt.cn;    
+
+		location / { 
+			root   html/dist;                
+			index  index.html index.htm; 
+			proxy_http_version 1.1; 
+			proxy_set_header Upgrade $http_upgrade;                
+			proxy_set_header Connection "upgrade";
+		}
+		
+		location /api { 
+			proxy_pass  http://www.qmtdlt.cn:8088/api/;  
+		} 
+	}
+```
