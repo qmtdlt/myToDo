@@ -9,7 +9,7 @@ namespace todo.Api.Hubs
         [EnableCors("cors")]
         public async Task guang_bo(string msg)
         {
-            await Clients.AllExcept(this.Context.ConnectionId).SendAsync("guang_bo", this.Context.ConnectionId + "\t" + msg + "\n");
+            await Clients.AllExcept(this.Context.ConnectionId).SendAsync("guang_bo", this.Context.ConnectionId + "\t" + msg + " \n");
         }
     }
 }
