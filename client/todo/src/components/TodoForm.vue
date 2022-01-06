@@ -109,8 +109,7 @@ export default {
     });
 
      this.$data.connection = new signalR.HubConnectionBuilder()
-    .withUrl(`${this.$data.base_url}/ChatHub`
-      , 
+    .withUrl(`${this.$data.base_url}/ChatHub`, 
       {
             skipNegotiation: true,  
             transport: signalR.HttpTransportType.WebSockets
