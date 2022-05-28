@@ -36,6 +36,7 @@
     <el-row>
       <el-input :span="20" v-model="receiveMsg" type="textarea" autosize></el-input>
     </el-row>
+    <el-link href="https://beian.miit.gov.cn/1">陕ICP备2021014706号-1</el-link>
   </div>
 </template>
 
