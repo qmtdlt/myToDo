@@ -52,7 +52,7 @@ export default {
   data()
   {
       let url = "";
-      let isdebug = false;
+      let isdebug = true;
       if(isdebug)
       {
         url = "http://localhost:5189";
