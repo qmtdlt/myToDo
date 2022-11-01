@@ -3,7 +3,7 @@
     <!-- 输入提交 -->
     <el-row>
         <el-col :span="15">
-            <el-input v-model="todoText"></el-input>
+            <el-input v-model="todoText" v-on:keyup.enter="do_post"></el-input>
         </el-col>        
         <el-button :span="2" @click="do_post" size="mini">post</el-button>        
     </el-row>
@@ -28,7 +28,7 @@
 
     <el-row>
       <el-col :span="20">
-            <el-input v-model="msgText"></el-input>
+            <el-input v-model="msgText" v-on:keyup.enter="send"></el-input>
         </el-col>   
         <el-button :span="2" @click="send">发送消息</el-button>
     </el-row>
@@ -36,6 +36,7 @@
     <el-row>
       <el-input :span="20" v-model="receiveMsg" type="textarea" autosize></el-input>
     </el-row>
+    <el-link href="https://beian.miit.gov.cn/1">陕ICP备2021014706号-1</el-link>
   </div>
 </template>
 
@@ -77,6 +78,7 @@ export default {
     send()
     {
       this.$data.connection.invoke("guang_bo", this.$data.msgText);
+      this.$data.msgText = "";
     },
       do_post(){ 
           axios.post(`${this.$data.base_url}/api/Todo/AddToDo?todoText=` + this.$data.todoText)
@@ -84,6 +86,7 @@ export default {
             axios.get(`${this.$data.base_url}/api/Todo/GetList`)
             .then((res)=>{
                 this.$data.todoList = res.data;
+                this.todoText = "";
             });              
           });
       },
@@ -109,8 +112,7 @@ export default {
     });
 
      this.$data.connection = new signalR.HubConnectionBuilder()
-    .withUrl(`${this.$data.base_url}/ChatHub`
-      , 
+    .withUrl(`${this.$data.base_url}/ChatHub`, 
       {
             skipNegotiation: true,  
             transport: signalR.HttpTransportType.WebSockets
