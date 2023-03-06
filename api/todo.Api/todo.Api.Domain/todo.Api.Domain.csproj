@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreeSql" Version="2.6.100" />
-    <PackageReference Include="FreeSql.Provider.MySql" Version="2.6.100" />
+    <PackageReference Include="FreeSql" Version="3.2.690" />
+    <PackageReference Include="FreeSql.Provider.MySql" Version="3.2.690" />
   </ItemGroup>
 
 </Project>
