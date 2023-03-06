@@ -1,4 +1,7 @@
 using FreeSql;
+using Microsoft.Extensions.Configuration.Json;
+using MySqlX.XDevAPI;
+using System.Configuration;
 using todo.Api.Hubs;
 using todo.Api.Util.Helper;
 
@@ -23,8 +26,12 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod());
 });
 
+var Configuration = new ConfigurationBuilder()
+                .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
+                .Build();
+string config = Configuration["mysql"];
 IFreeSql freeSql = new FreeSqlBuilder()
-    .UseConnectionString(DataType.MySql, "Server=1.15.248.70;User ID=root;Password=123456;port=3306;Database=todo_db;CharSet=utf8;pooling=true;SslMode=None;")
+    .UseConnectionString(DataType.MySql, config)
     .UseAutoSyncStructure(true)
     .Build();
 builder.Services.AddSingleton<IFreeSql>(freeSql);

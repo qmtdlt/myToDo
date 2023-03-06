@@ -26,3 +26,6 @@ pnpm-debug.log*
 project-colors.json
 .futdcache.v1
 *.suo
+
+
+/api/todo.Api/todo.Api/.vs/
